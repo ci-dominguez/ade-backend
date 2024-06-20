@@ -36,6 +36,33 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updateAt;
 
+    /////////////////////Constructors/////////////////////
+
+    /**
+     * Default no-argument constructor required by JPA
+     */
+    public User(){}
+
+    /**
+     * Constructs a new User with all fields except:
+     * id, createAt, updateAt which are managed by JPA/DB
+     *
+     * @param firstName The user's first name
+     * @param lastName The user's last name
+     * @param email The user's email
+     * @param password The user's password
+     * @param phoneNumber The user's phone number
+     * @param role The user's role
+     */
+    public User(String firstName, String lastName, String email, String password, String phoneNumber, UserRole role){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.role = role;
+    }
+
     /////////////////////Getters & Setters/////////////////////
     public Long getId() {
         return id;
