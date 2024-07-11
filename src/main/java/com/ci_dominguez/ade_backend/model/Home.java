@@ -3,6 +3,7 @@ package com.ci_dominguez.ade_backend.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="homes")
@@ -30,8 +31,39 @@ public class Home {
 
     private Integer yearBuilt;
 
+    private String mainImgUrl;
+
     @OneToOne(mappedBy = "home", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private HomeDetails homeDetails;
+
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @Column(nullable = false)
+    private LocalDateTime updatedAt;
+
+    /////////////////////Methods/////////////////////
+    /**
+     * Invoked before persisting a new entity
+     * Initializes entity metadata:
+     *  - 'createdAt' to the current date and time
+     *  - 'updatedAt' to the current date and time
+     */
+    @PrePersist
+    protected void onCreate(){
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+    }
+
+    /**
+     * Invoked before updating existing entity
+     * Updates entity metadata:
+     *  - 'updatedAt' to the current date and time
+     */
+    @PreUpdate
+    protected void onUpdate(){
+        updatedAt = LocalDateTime.now();
+    }
 
     /////////////////////Getters & Setters/////////////////////
     public Long getId() {
@@ -120,5 +152,29 @@ public class Home {
 
     public void setHomeDetails(HomeDetails homeDetails) {
         this.homeDetails = homeDetails;
+    }
+
+    public String getMainImgUrl() {
+        return mainImgUrl;
+    }
+
+    public void setMainImgUrl(String mainImgUrl) {
+        this.mainImgUrl = mainImgUrl;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
