@@ -90,13 +90,20 @@ public class HomeService {
         }
     }
 
+    public HomeDetailsDTO getHomeDetailsById(Long id) {
+        Home home = homeRepository.findById(id)
+                .orElseThrow(() -> new DatabaseException("Home not found with id: " + id));
+        return convertToHomeDetailsDTO(home);
+    }
+
+
     /**
      * Converts a Home entity to a HomeCardDTO
      *
      * @param home The Home entity to convert
      * @return A HomeCardDTO containing the essential information for a home card display
      */
-    private HomeCardDTO convertToHomeCardDTO(Home home) {
+    public HomeCardDTO convertToHomeCardDTO(Home home) {
         return new HomeCardDTO(
                 home.getId(),
                 home.getAddress(),
@@ -114,7 +121,7 @@ public class HomeService {
      * @param home The Home entity to convert
      * @return A HomeDetailsDTO containing all the detailed information about a home
      */
-    private HomeDetailsDTO convertToHomeDetailsDTO(Home home) {
+    public HomeDetailsDTO convertToHomeDetailsDTO(Home home) {
         HomeDetails details = home.getHomeDetails();
         return new HomeDetailsDTO(
                 home.getId(),
