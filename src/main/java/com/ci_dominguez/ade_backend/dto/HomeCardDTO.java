@@ -14,13 +14,13 @@ public class HomeCardDTO {
 
     private final BigDecimal bathrooms;
 
-    private final BigDecimal lotSize;
+    private final String lotSize;
 
     private final String mainImgUrl;
 
     /////////////////////Constructors/////////////////////
     //Constructor with all fields
-    public HomeCardDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, BigDecimal lotSize, String mainImgUrl) {
+    public HomeCardDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, String lotSize, String mainImgUrl) {
         this.id = id;
         this.address = address;
         this.cost = cost;
@@ -71,7 +71,7 @@ public class HomeCardDTO {
         return bathrooms;
     }
 
-    public BigDecimal getLotSize() {
+    public String getLotSize() {
         return lotSize;
     }
 

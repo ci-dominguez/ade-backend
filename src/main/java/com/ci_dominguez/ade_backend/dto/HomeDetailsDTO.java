@@ -16,7 +16,9 @@ public class HomeDetailsDTO {
 
     private final BigDecimal bathrooms;
 
-    private final BigDecimal lotSize;
+    private final String lotSize;
+
+    private final String livableAreaSize;
 
     private final String mainImgUrl;
 
@@ -28,13 +30,14 @@ public class HomeDetailsDTO {
 
     /////////////////////Constructors/////////////////////
     //Constructor with all fields
-    public HomeDetailsDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, BigDecimal lotSize, String mainImgUrl, Map<String, Object> facts, List<String> whatsSpecial, List<String> photoGallery) {
+    public HomeDetailsDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, String lotSize, String livableAreaSize, String mainImgUrl, Map<String, Object> facts, List<String> whatsSpecial, List<String> photoGallery) {
         this.id = id;
         this.address = address;
         this.cost = cost;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
         this.lotSize = lotSize;
+        this.livableAreaSize = livableAreaSize;
         this.mainImgUrl = mainImgUrl;
         this.facts = facts;
         this.whatsSpecial = whatsSpecial;
@@ -85,7 +88,7 @@ public class HomeDetailsDTO {
         return bathrooms;
     }
 
-    public BigDecimal getLotSize() {
+    public String getLotSize() {
         return lotSize;
     }
 
@@ -104,4 +107,6 @@ public class HomeDetailsDTO {
     public List<String> getPhotoGallery() {
         return photoGallery;
     }
+
+    public String getLivableAreaSize() { return livableAreaSize; }
 }
