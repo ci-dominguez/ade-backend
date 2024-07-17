@@ -134,7 +134,8 @@ public class HomeService {
                 home.getMainImgUrl(),
                 details.getFacts(),
                 details.getWhatsSpecial(),
-                details.getPhotoGallery()
+                details.getPhotoGallery(),
+                home.getOverview()
         );
     }
 
