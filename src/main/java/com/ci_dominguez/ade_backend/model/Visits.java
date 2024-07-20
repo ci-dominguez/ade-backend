@@ -3,9 +3,7 @@ package com.ci_dominguez.ade_backend.model;
 import com.ci_dominguez.ade_backend.model.enums.VisitStatus;
 import com.ci_dominguez.ade_backend.model.enums.VisitType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 
