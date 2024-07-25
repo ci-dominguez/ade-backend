@@ -4,13 +4,13 @@ import com.ci_dominguez.ade_backend.model.enums.VisitStatus;
 import com.ci_dominguez.ade_backend.model.enums.VisitType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="visits")
 public class Visits {
-
     /////////////////////Instance Variables/////////////////////
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +38,9 @@ public class Visits {
     @Column(columnDefinition = "TEXT")
     private String visitorComment;
 
+    @NotBlank(message = "Date and Time is required")
+    @Future(message = "Date must be in the future")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime requestedDate;
 
     @Column(nullable = true)
