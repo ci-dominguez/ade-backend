@@ -30,9 +30,11 @@ public class HomeDetailsDTO {
 
     private final String overview;
 
+    private final Integer yearBuilt;
+
     /////////////////////Constructors/////////////////////
     //Constructor with all fields
-    public HomeDetailsDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, String lotSize, String livableAreaSize, String mainImgUrl, Map<String, Object> facts, List<String> whatsSpecial, List<String> photoGallery , String overview) {
+    public HomeDetailsDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, String lotSize, String livableAreaSize, String mainImgUrl, Map<String, Object> facts, List<String> whatsSpecial, List<String> photoGallery , String overview, Integer yearBuilt) {
         this.id = id;
         this.address = address;
         this.cost = cost;
@@ -45,6 +47,7 @@ public class HomeDetailsDTO {
         this.whatsSpecial = whatsSpecial;
         this.photoGallery = photoGallery;
         this.overview = overview;
+        this.yearBuilt = yearBuilt;
     }
 
     /////////////////////Methods/////////////////////
@@ -114,4 +117,6 @@ public class HomeDetailsDTO {
     public String getLivableAreaSize() { return livableAreaSize; }
 
     public String getOverview() { return overview; }
+
+    public Integer getYearBuilt() {return yearBuilt;}
 }

@@ -16,11 +16,17 @@ public class HomeCardDTO {
 
     private final String lotSize;
 
+    private final String livableAreaSize;
+
     private final String mainImgUrl;
+
+    private final String overview;
+
+    private final Integer yearBuilt;
 
     /////////////////////Constructors/////////////////////
     //Constructor with all fields
-    public HomeCardDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, String lotSize, String mainImgUrl) {
+    public HomeCardDTO(Long id, String address, BigDecimal cost, BigDecimal bedrooms, BigDecimal bathrooms, String lotSize, String mainImgUrl, String livableAreaSize, String overview, Integer yearBuilt) {
         this.id = id;
         this.address = address;
         this.cost = cost;
@@ -28,6 +34,9 @@ public class HomeCardDTO {
         this.bathrooms = bathrooms;
         this.lotSize = lotSize;
         this.mainImgUrl = mainImgUrl;
+        this.livableAreaSize = livableAreaSize;
+        this.overview = overview;
+        this.yearBuilt = yearBuilt;
     }
 
     /////////////////////Methods/////////////////////
@@ -78,4 +87,10 @@ public class HomeCardDTO {
     public String getMainImgUrl() {
         return mainImgUrl;
     }
+
+    public String getLivableAreaSize() { return livableAreaSize; }
+
+    public String getOverview() { return overview; }
+
+    public Integer getYearBuilt() { return yearBuilt; }
 }

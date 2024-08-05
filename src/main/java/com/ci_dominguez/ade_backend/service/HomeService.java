@@ -111,7 +111,10 @@ public class HomeService {
                 home.getBedrooms(),
                 home.getBathrooms(),
                 home.getLotSize(),
-                home.getMainImgUrl()
+                home.getMainImgUrl(),
+                home.getLivableAreaSize(),
+                home.getOverview(),
+                home.getYearBuilt()
         );
     }
 
@@ -130,12 +133,13 @@ public class HomeService {
                 home.getBedrooms(),
                 home.getBathrooms(),
                 home.getLotSize(),
-                details.getHome().getLivableAreaSize(),
+                home.getLivableAreaSize(),
                 home.getMainImgUrl(),
                 details.getFacts(),
                 details.getWhatsSpecial(),
                 details.getPhotoGallery(),
-                home.getOverview()
+                home.getOverview(),
+                home.getYearBuilt()
         );
     }
 
