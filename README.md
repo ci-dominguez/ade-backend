@@ -1,6 +1,6 @@
 # 🏡 Ade - Spring-Java REST API
 
-The backend for [Ade](https://ade.cidominguez.com) is a Spring Boot REST API. It handles business logic, data storage, and communication with the PostgreSQL database hosted on [Neon](https://neon.tech). The backend is deployed on [Koyeb](https://koyeb.com).
+The backend for Ade is a Spring Boot REST API. It handles business logic, data storage, and communication with the PostgreSQL database hosted on Neon. The backend is deployed on Koyeb. The frontend can be found [here](https://github.com/cdom27/ade-react-typescript-frontend).
 
 ## ✨ Features
 
